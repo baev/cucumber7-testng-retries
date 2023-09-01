@@ -11,34 +11,31 @@ version = 1.3
 
 val allureVersion = "2.24.0"
 val cucumberVersion = "7.13.0"
+val aspectJVersion = "1.9.20"
 
 tasks.withType(JavaCompile::class) {
     sourceCompatibility = "${JavaVersion.VERSION_11}"
     targetCompatibility = "${JavaVersion.VERSION_11}"
+    options.encoding = "UTF-8"
+    options.compilerArgs.add("-parameters")
 }
 
-tasks {
-    compileJava {
-        options.encoding = "UTF-8"
-    }
-    compileTestJava {
-        options.encoding = "UTF-8"
-    }
+val agent: Configuration by configurations.creating {
+    isCanBeConsumed = true
+    isCanBeResolved = true
 }
 
-tasks.withType(Test::class) {
+tasks.test {
     ignoreFailures = true
-    useTestNG {
-
-    }
-}
-
-repositories {
-    mavenLocal()
-    mavenCentral()
+    useTestNG()
+    jvmArgs = listOf(
+        "-javaagent:${agent.singleFile}"
+    )
 }
 
 dependencies {
+    agent("org.aspectj:aspectjweaver:${aspectJVersion}")
+
     testImplementation(platform("io.cucumber:cucumber-bom:$cucumberVersion"))
     testImplementation("io.cucumber:cucumber-testng")
     testImplementation("io.cucumber:cucumber-java")
@@ -48,4 +45,8 @@ dependencies {
     testImplementation("io.qameta.allure:allure-testng")
 
     testImplementation("org.slf4j:slf4j-simple:1.7.30")
+}
+
+repositories {
+    mavenCentral()
 }
