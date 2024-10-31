@@ -1,5 +1,5 @@
-# Allure Cucumber 7 JVM example
+# Allure Cucumber 7 JVM TestNG example
 
-This project uses Gradle KTS, TestNG and Java 11
+This project uses Gradle KTS, TestNG and Java 11 & RetryAnalyser
 
-The generated report available here: https://allure-examples.github.io/allure-cucumber7-testng-gradle-kts
+The generated report available here: https://baev.github.io/allure-cucumber7-testng-gradle-kts

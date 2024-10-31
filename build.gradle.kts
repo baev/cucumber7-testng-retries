@@ -9,9 +9,9 @@ tasks.withType(Wrapper::class) {
 group = "io.qameta.allure.examples"
 version = 1.3
 
-val allureVersion = "2.24.0"
-val cucumberVersion = "7.13.0"
-val aspectJVersion = "1.9.20"
+val allureVersion = "2.29.0"
+val cucumberVersion = "7.20.1"
+val aspectJVersion = "1.9.22.1"
 
 tasks.withType(JavaCompile::class) {
     sourceCompatibility = "${JavaVersion.VERSION_11}"
@@ -27,7 +27,9 @@ val agent: Configuration by configurations.creating {
 
 tasks.test {
     ignoreFailures = true
-    useTestNG()
+    useTestNG {
+        listeners.add("io.qameta.allure.examples.cucumber7.RetryListener")
+    }
     jvmArgs = listOf(
         "-javaagent:${agent.singleFile}"
     )
