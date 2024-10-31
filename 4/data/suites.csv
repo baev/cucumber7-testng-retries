@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1001","Add label to existing issue for authorized user","","Thu Oct 31 12:03:05 GMT 2024","passed","Thu Oct 31 12:03:06 GMT 2024","","Labels","Add label to existing issue for authorized user",""
+"","108","Close existing milestone for authorized user","","Thu Oct 31 12:03:05 GMT 2024","passed","Thu Oct 31 12:03:05 GMT 2024","","Milestones","Close existing milestone for authorized user",""
+"","103","Create new milestone for authorized user","","Thu Oct 31 12:03:05 GMT 2024","passed","Thu Oct 31 12:03:05 GMT 2024","","Milestones","Create new milestone for authorized user",""
+"","108","Create new label via api","","Thu Oct 31 12:03:05 GMT 2024","passed","Thu Oct 31 12:03:05 GMT 2024","","Labels","Create new label via api",""
+"","100","Delete existing label via api","","Thu Oct 31 12:03:05 GMT 2024","passed","Thu Oct 31 12:03:05 GMT 2024","","Labels","Delete existing label via api",""
+"","2003","Delete existing label for authorized user","","Thu Oct 31 12:03:05 GMT 2024","passed","Thu Oct 31 12:03:07 GMT 2024","","Labels","Delete existing label for authorized user",""
+"","20","Create new label for authorized user","","Thu Oct 31 12:03:05 GMT 2024","passed","Thu Oct 31 12:03:05 GMT 2024","","Labels","Create new label for authorized user",""
